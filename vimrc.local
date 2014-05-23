@@ -1,0 +1,130 @@
+" turn syntax highlighting and line numbering on
+set relativenumber
+set number
+
+" theme settings
+set background=dark
+colorscheme solarized
+
+" line settings
+set noeol
+set nowrap
+
+" right margin
+au Filetype ruby set colorcolumn=80
+au Filetype php set colorcolumn=120
+
+" mode exit timeout
+set ttimeoutlen=50
+
+" Persistent undos
+set undodir=~/.vim/backup
+set undofile
+
+" show matching brackets
+set showmatch
+
+" set backspace to act as it should
+set backspace=eol,start,indent
+
+" allow yanking to OSX clipboard
+set clipboard=unnamed
+
+" map file extensions to proper file types for syntax highlighting
+au BufNewFile,BufRead *.ctp set ft=php.html
+autocmd BufNewFile,BufRead *.quicktask setf quicktask
+
+" map leader to ,
+let mapleader=","
+
+"map <ESC> to jj
+inoremap jj <ESC>
+
+"map : to ;
+map ; :
+
+" map <leader>s to trim white space
+map <leader>s :%s/\s\+$//e<CR>
+
+" yeah so maybe I wanna scroll with the mouse sometimes, eff off
+if has('mouse')
+  set mouse=a
+    if &term =~ "xterm" || &term =~ "screen"
+      autocmd VimEnter * set ttymouse=xterm2
+      autocmd FocusGained * set ttymouse=xterm2
+      autocmd BufEnter * set ttymouse=xterm2
+    endif
+endif
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/vendor/bundle*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+"plugin settings - start
+
+"open CtrlP in buffer mode
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+" set ctrlp fuzzy finder to include hidden files
+let g:ctrlp_show_hidden = 1
+
+" ignore files for ctrlp
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|DS_STORE)$'
+
+" Enable syntastic syntax checking
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_messages= {'level': 'warnings'}
+let g:syntastic_phpcs_disable=1
+
+" Airline settings
+" set theme
+let g:airline_theme='solarized'
+" use powerline fonts
+let g:airline_powerline_fonts = 1
+
+" set gitgutter column color
+highlight clear SignColumn
+
+" Dispatch settings
+nnoremap <F9> :Dispatch<CR>
+autocmd FileType ruby let b:dispatch = 'bin/rspec %'
+
+" Set <C-b> to cycle backwards through youcompleteme options
+let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
+
+"allow youcompleteme to pull from strings and comments
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+"allow youcompleteme to pull from tags
+let g:ycm_collect_identifiers_from_tags_files = 0
+
+let g:ycm_seed_identifiers_with_syntax = 1
+
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
+autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
+autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile = 1
+
+" Ultisnips key mappings
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" Tagbar settings
+nmap <F8> :TagbarToggle<CR>
+
+" plugin settings - end

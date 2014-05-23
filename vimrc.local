@@ -1,6 +1,5 @@
 " turn syntax highlighting and line numbering on
 set relativenumber
-set number
 
 " theme settings
 set background=dark
@@ -12,7 +11,6 @@ set nowrap
 
 " right margin
 au Filetype ruby set colorcolumn=80
-au Filetype php set colorcolumn=120
 
 " mode exit timeout
 set ttimeoutlen=50
@@ -31,30 +29,13 @@ set backspace=eol,start,indent
 set clipboard=unnamed
 
 " map file extensions to proper file types for syntax highlighting
-au BufNewFile,BufRead *.ctp set ft=php.html
 autocmd BufNewFile,BufRead *.quicktask setf quicktask
-
-" map leader to ,
-let mapleader=","
 
 "map <ESC> to jj
 inoremap jj <ESC>
 
-"map : to ;
-map ; :
-
 " map <leader>s to trim white space
-map <leader>s :%s/\s\+$//e<CR>
-
-" yeah so maybe I wanna scroll with the mouse sometimes, eff off
-if has('mouse')
-  set mouse=a
-    if &term =~ "xterm" || &term =~ "screen"
-      autocmd VimEnter * set ttymouse=xterm2
-      autocmd FocusGained * set ttymouse=xterm2
-      autocmd BufEnter * set ttymouse=xterm2
-    endif
-endif
+map <leader>ws :%s/\s\+$//e<CR>
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -100,17 +81,6 @@ highlight clear SignColumn
 " Dispatch settings
 nnoremap <F9> :Dispatch<CR>
 autocmd FileType ruby let b:dispatch = 'bin/rspec %'
-
-" Set <C-b> to cycle backwards through youcompleteme options
-let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
-
-"allow youcompleteme to pull from strings and comments
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-"allow youcompleteme to pull from tags
-let g:ycm_collect_identifiers_from_tags_files = 0
-
-let g:ycm_seed_identifiers_with_syntax = 1
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1

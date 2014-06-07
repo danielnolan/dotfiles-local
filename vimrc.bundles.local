@@ -1,4 +1,3 @@
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rbenv'

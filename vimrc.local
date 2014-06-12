@@ -1,34 +1,7 @@
-" turn syntax highlighting and line numbering on
-set relativenumber
-
-" theme settings
-set background=dark
-colorscheme solarized
-
-" line settings
-set noeol
-set nowrap
-
-" set right margin
-set colorcolumn=80
-
-" mode exit timeout
-set ttimeoutlen=50
-
-" Persistent undos
-set undodir=~/.vim/backup
-set undofile
-
-" set backspace to act as it should
-set backspace=eol,start,indent
-
-" allow yanking to OSX clipboard
+" copy to osx clipboard
 set clipboard=unnamed
 
-" map file extensions to proper file types for syntax highlighting
-autocmd BufNewFile,BufRead *.quicktask setf quicktask
-
-"map <ESC> to jj
+" map <ESC> to jj
 inoremap jj <ESC>
 
 " map <leader>s to trim white space
@@ -37,15 +10,10 @@ map <leader>ws :%s/\s\+$//e<CR>
 " Complete terms from all buffers
 set complete=.,w,b,u,t,i
 
-"plugin settings - start
+" plugin settings - start
 
-"open CtrlP in buffer mode
+" open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
-
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages= {'level': 'warnings'}
-let g:syntastic_phpcs_disable=1
 
 " Airline settings
 " set theme
@@ -60,12 +28,7 @@ highlight clear SignColumn
 nnoremap <F9> :Dispatch<CR>
 autocmd FileType ruby let b:dispatch = 'bin/rspec %'
 
-" Ultisnips key mappings
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" Tagbar settings
-nmap <F8> :TagbarToggle<CR>
+" Rspec.vim settings
+let g:rspec_command = "Dispatch bin/rspec {spec}"
 
 " plugin settings - end

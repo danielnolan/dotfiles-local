@@ -17,18 +17,11 @@ bind ^F select-pane -t :.+
 #new 25% vertical split pane
 bind ^T split-window -p 25
 
-# start window numbers at 1 to match keyboard order with tmux window order
-set -g base-index 1
-set -g pane-base-index 1
-
-# renumber windows sequentially after closing any of them
-set -g renumber-windows on
-
 # utf-8 character support in the statusbar
 set -g status-utf8 on
 
 # lower the delay between the prefix key and other keys (fixes pause when using vim)
-set -sg escape-time 1
+set -sg escape-time 0
 
 # Setup 'v' to begin selection as in Vim
 bind-key -t vi-copy v begin-selection
@@ -55,9 +48,6 @@ bind -r L resize-pane -R 5
 # auto-name my windows!
 setw -g automatic-rename on
 set -g automatic-rename-format "#{pane_current_command}"
-
-# not really sure what this does, but with it, the scrollwheel works inside Vim
-set-option -g mouse-utf8 on
 
 # Colors 
 set -g status-fg colour7 # status fg

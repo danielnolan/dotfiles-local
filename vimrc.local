@@ -1,9 +1,6 @@
 " copy to osx clipboard
 set clipboard=unnamed
 
-" map <ESC> to jj
-inoremap jj <ESC>
-
 " map <leader>s to trim white space
 map <leader>ws :%s/\s\+$//e<CR>
 
@@ -21,14 +18,8 @@ let g:airline_theme='solarized'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 
-" set gitgutter column color
-highlight clear SignColumn
-
 " Dispatch settings
 nnoremap <F9> :Dispatch<CR>
 autocmd FileType ruby let b:dispatch = 'bin/rspec %'
-
-" Rspec.vim settings
-let g:rspec_command = "Dispatch bin/rspec {spec}"
 
 " plugin settings - end

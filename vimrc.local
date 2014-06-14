@@ -7,6 +7,10 @@ map <leader>ws :%s/\s\+$//e<CR>
 " Complete terms from all buffers
 set complete=.,w,b,u,t,i
 
+" Persistent undos
+set undodir=~/.vim/backup
+set undofile
+
 " plugin settings - start
 
 " open CtrlP in buffer mode

@@ -1,3 +1,4 @@
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-rbenv'

@@ -11,7 +11,7 @@ set complete=.,w,b,u,t,i
 set undodir=~/.vim/backup
 set undofile
 
-" plugin settings - start
+" Plugin settings - start
 
 " open CtrlP in buffer mode
 nnoremap <leader>b :CtrlPBuffer<CR>
@@ -22,8 +22,13 @@ let g:airline_theme='solarized'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 
+" Gitgutter settings
+let g:gitgutter_escape_grep = 1
+highlight clear SignColumn
+
+
 " Dispatch settings
 nnoremap <F9> :Dispatch<CR>
 autocmd FileType ruby let b:dispatch = 'bin/rspec %'
 
-" plugin settings - end
+" Plugin settings - end

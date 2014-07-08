@@ -11,6 +11,9 @@ set complete=.,w,b,u,t,i
 set undodir=~/.vim/backup
 set undofile
 
+" Update time
+set updatetime=1500
+
 " Plugin settings - start
 
 " open CtrlP in buffer mode

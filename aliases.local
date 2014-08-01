@@ -1,6 +1,8 @@
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # alias hub functions as git functions
 function git(){hub "$@"}
 
 alias mux=tmuxinator
+
+alias vim=nvim

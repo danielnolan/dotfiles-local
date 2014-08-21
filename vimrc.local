@@ -29,9 +29,8 @@ let g:airline_powerline_fonts = 1
 let g:gitgutter_escape_grep = 1
 highlight clear SignColumn
 
-
 " Dispatch settings
 nnoremap <F9> :Dispatch<CR>
-autocmd FileType ruby let b:dispatch = 'bin/rspec %'
+autocmd FileType ruby let b:dispatch = 'rspec %'
 
 " Plugin settings - end

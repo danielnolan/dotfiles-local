@@ -9,4 +9,3 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 zeus.json
-vendor/bundle

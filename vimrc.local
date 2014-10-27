@@ -33,6 +33,9 @@ highlight clear SignColumn
 nnoremap <F9> :Dispatch<CR>
 autocmd FileType ruby let b:dispatch = 'rspec %'
 
+" rspec.vim settings
+let g:rspec_command = "Dispatch rspec {spec}"
+
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"

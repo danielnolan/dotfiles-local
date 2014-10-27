@@ -1,8 +1,5 @@
 #fix for window naming issue with tmuxinator
 export DISABLE_AUTO_TITLE=true
 
-# add heroku toolbelt to path
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # set the vimruntime for Neovim
 export VIMRUNTIME=/usr/local/share/vim/vim74

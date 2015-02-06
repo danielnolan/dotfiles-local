@@ -1,5 +1,2 @@
 #fix for window naming issue with tmuxinator
 export DISABLE_AUTO_TITLE=true
-
-# set the vimruntime for Neovim
-export VIMRUNTIME=/usr/local/share/vim/vim74

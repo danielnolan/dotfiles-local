@@ -3,8 +3,8 @@
 
 [alias]
   workprofile = config user.email "dnolan@t1dexchange.org"
+  lmsg = log -n 1 --pretty=format:'%s%n%n%b'
 
 [user]
   name = Daniel Nolan
   email = danielanolan@gmail.com
-

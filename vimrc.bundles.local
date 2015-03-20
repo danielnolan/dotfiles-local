@@ -1,4 +1,5 @@
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'AndrewRadev/vim-eco'
 Plugin 'bling/vim-airline'
 Plugin 'kana/vim-textobj-user'

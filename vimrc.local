@@ -11,6 +11,10 @@ set undofile
 " Update time
 set updatetime=1500
 
+" Color scheme
+set background=dark
+colorscheme solarized
+
 " Plugin settings - start
 
 " open CtrlP in buffer mode

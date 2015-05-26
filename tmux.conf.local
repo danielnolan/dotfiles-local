@@ -10,12 +10,13 @@ bind C-f send-prefix
 unbind r
 bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# quick pane cycling
-unbind ^F
-bind ^F select-pane -t :.+
-
-#new 25% vertical split pane
-bind ^T split-window -p 25
+# key bindings for vim-tmux-navigator plugin
+is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
+bind -n C-h if-shell "$is_vim" "send-keys C-h" "select-pane -L"
+bind -n C-j if-shell "$is_vim" "send-keys C-j" "select-pane -D"
+bind -n C-k if-shell "$is_vim" "send-keys C-k" "select-pane -U"
+bind -n C-l if-shell "$is_vim" "send-keys C-l" "select-pane -R"
+bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 
 # utf-8 character support in the statusbar
 set -g status-utf8 on
@@ -49,31 +50,34 @@ bind -r L resize-pane -R 5
 setw -g automatic-rename on
 set -g automatic-rename-format "#{pane_current_command}"
 
-# Colors 
+# choose tree command for switching between sessions
+bind-key C-j choose-tree
+
+# Colors
 set -g status-fg colour7 # status fg
 set -g status-bg colour0 # status bg
 set -g status-attr default
-  
+
 setw -g window-status-fg colour10 # default window title fg
 setw -g window-status-bg default # default window title bg
 setw -g window-status-attr default # default window title attribute
- 
+
 setw -g window-status-current-fg colour2 # current window title fg
 setw -g window-status-current-bg default # current window title bg
- 
+
 set -g pane-border-fg colour10
 set -g pane-border-bg default
 set -g pane-active-border-fg colour2
-set -g pane-active-border-bg default 
- 
+set -g pane-active-border-bg default
+
 set -g message-bg colour1
 set -g message-fg colour7
- 
+
 set -g display-panes-active-colour colour33
 set -g display-panes-colour colour166
- 
+
 setw -g clock-mode-colour colour64
- 
+
 set -g status-utf8 on # utf-8 character support in the statusbar
 set -g status-left-length 40
 set -g status-left "#[fg=colour10]Session: #S"

@@ -49,4 +49,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" Vim i18n
+vmap <Leader>z :call I18nTranslateString()<CR>
+
 " Plugin settings - end

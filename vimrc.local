@@ -43,6 +43,9 @@ highlight clear SignColumn
 " rspec.vim settings
 let g:rspec_command = "call VtrSendCommand('rspec {spec}', 1)"
 
+" syntastic
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"

@@ -8,6 +8,9 @@ nnoremap <leader>= :wincmd =<cr>
 " map <leader>s to trim white space
 map <leader>ws :%s/\s\+$//e<CR>
 
+" map <leader>c to close buffer but leave window intact
+nmap <leader>c :ene<CR>:bw #<CR>
+
 " Complete terms from all buffers
 set complete=.,w,b,u,t,i
 
@@ -37,19 +40,27 @@ let g:airline_powerline_fonts = 1
 let g:gitgutter_escape_grep = 1
 highlight clear SignColumn
 
-" Dispatch settings
-nnoremap <F9> :Dispatch<CR>
-autocmd FileType ruby let b:dispatch = 'rspec %'
-
 " rspec.vim settings
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "call VtrSendCommand('rspec {spec}', 1)"
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" Vim i18n
-vmap <Leader>z :call I18nTranslateString()<CR>
+" Vim Tmux Runner
+let g:VtrUseVtrMaps = 1
+let g:VtrGitCdUpOnOpen = 0
+let g:VtrPercentage = 25
+
+nmap <C-a> :VtrSendLinesToRunner<cr>
+nmap <leader>osr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<cr>
+nnoremap <leader>va :VtrAttachToPane<cr>
+nnoremap <leader>kr :VtrKillRunner<cr>
+nnoremap <leader>zr :VtrFocusRunner<cr>
+nnoremap <leader>rs :VtrSendCommandToRunner rake<cr>
+nnoremap <leader>sd :VtrSendCtrlD<cr>
+nnoremap <leader>q :VtrSendCommandToRunner q<cr>
+nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
 
 " Plugin settings - end

@@ -1,5 +1,4 @@
-export EDITOR='vim'
-
+alias vim='nvim'
 # alias hub functions as git functions
 function git(){hub "$@"}
 

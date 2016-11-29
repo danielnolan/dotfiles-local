@@ -5,6 +5,9 @@ export DISABLE_AUTO_TITLE=true
 setopt auto_cd
 cdpath=($HOME $HOME/Projects)
 
+export GOPATH=$HOME/go_projects
+export PATH=$PATH:$GOPATH/bin
+
 # show completion menu on successive tab press
 setopt auto_menu
 

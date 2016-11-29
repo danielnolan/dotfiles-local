@@ -63,4 +63,15 @@ nnoremap <leader>sd :VtrSendCtrlD<cr>
 nnoremap <leader>q :VtrSendCommandToRunner q<cr>
 nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
 
+" vim-go settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+
+au FileType go nmap <leader>r <Plug>(go-run)
 " Plugin settings - end

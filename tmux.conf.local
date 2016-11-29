@@ -80,3 +80,15 @@ set -g status-left "#[fg=colour10]Session: #S"
 set -g status-right "#[fg=colour10][%m/%d/%Y %l:%M%p]"
 set -g status-justify centre # center window list
 
+
+# List of plugins
+set -g @tpm_plugins '          \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-resurrect  \
+'
+
+# for vim
+set -g @resurrect-strategy-vim 'session'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

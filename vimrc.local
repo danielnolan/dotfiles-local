@@ -1,3 +1,5 @@
+" set hidden 
+set hidden
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
@@ -10,6 +12,11 @@ map <leader>ws :%s/\s\+$//e<CR>
 
 " map <leader>c to close buffer but leave window intact
 nmap <leader>c :ene<CR>:bw #<CR>
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <A-[> <Esc>
+endif
 
 " Complete terms from all buffers
 set complete=.,w,b,u,t,i
@@ -24,6 +31,11 @@ set updatetime=1500
 " Color scheme
 set background=dark
 colorscheme solarized
+
+" Highlight find and replace
+if has("nvim")
+  set inccommand=split
+endif
 
 " Plugin settings - start
 
@@ -40,28 +52,14 @@ let g:airline_powerline_fonts = 1
 let g:gitgutter_escape_grep = 1
 highlight clear SignColumn
 
-" rspec.vim settings
-let g:rspec_command = "call VtrSendCommand('rspec {spec}', 1)"
+" Neoterm settings
+let g:neoterm_size = 20
+let g:neoterm_autoinsert = 1
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Vim Tmux Runner
-let g:VtrUseVtrMaps = 1
-let g:VtrGitCdUpOnOpen = 0
-let g:VtrPercentage = 25
-
-nmap <C-a> :VtrSendLinesToRunner<cr>
-nmap <leader>osr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<cr>
-nnoremap <leader>va :VtrAttachToPane<cr>
-nnoremap <leader>kr :VtrKillRunner<cr>
-nnoremap <leader>zr :VtrFocusRunner<cr>
-nnoremap <leader>rs :VtrSendCommandToRunner rake<cr>
-nnoremap <leader>sd :VtrSendCtrlD<cr>
-nnoremap <leader>q :VtrSendCommandToRunner q<cr>
-nnoremap <leader>sf :w<cr>:call SendFileViaVtr()<cr>
 
 " vim-go settings
 let g:go_highlight_functions = 1
@@ -72,6 +70,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
+
+" vim-test settings
+let test#strategy = "neoterm"
 
 au FileType go nmap <leader>r <Plug>(go-run)
 " Plugin settings - end

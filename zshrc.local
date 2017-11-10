@@ -1,3 +1,8 @@
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
+export VISUAL=nvim
 #fix for window naming issue with tmuxinator
 export DISABLE_AUTO_TITLE=true
 
@@ -7,6 +12,8 @@ cdpath=($HOME $HOME/Projects)
 
 export GOPATH=$HOME/go_projects
 export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # show completion menu on successive tab press
 setopt auto_menu

@@ -2,7 +2,7 @@
   editor = nvim
 
 [alias]
-  workprofile = config user.email "dnolan@unitio.io"
+  workprofile = config user.email "dnolan@raysbaseball.com"
   lmsg = log -n 1 --pretty=format:'%s%n%n%b'
 
 [user]

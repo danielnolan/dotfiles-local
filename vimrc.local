@@ -59,6 +59,8 @@ highlight clear SignColumn
 " Neoterm settings
 let g:neoterm_size = 20
 let g:neoterm_autoinsert = 1
+let g:neoterm_autoscroll = 1
+let g:neoterm_fixedsize = 1
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -79,4 +81,10 @@ let g:go_fmt_command = "goimports"
 let test#strategy = "neoterm"
 
 au FileType go nmap <leader>r <Plug>(go-run)
+
+" Disable inherited syntastic
+let g:syntastic_mode_map = {
+  \ 'mode': 'passive',
+  \ 'active_filetypes': [],
+  \ 'passive_filetypes': [] }
 " Plugin settings - end

@@ -15,8 +15,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-export PATH=$PATH:/usr/local/mysql/bin
-
 # show completion menu on successive tab press
 setopt auto_menu
 

@@ -57,10 +57,9 @@ let g:gitgutter_escape_grep = 1
 highlight clear SignColumn
 
 " Neoterm settings
-let g:neoterm_size = 20
 let g:neoterm_autoinsert = 1
 let g:neoterm_autoscroll = 1
-let g:neoterm_fixedsize = 1
+let g:neoterm_default_mod = ":vert"
 
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"

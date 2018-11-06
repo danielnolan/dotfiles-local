@@ -25,3 +25,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # tab completion becomes a menu which highlights selections
 # and allows you to move horizontally across menu rows
 zstyle ':completion:*:*:*:*:*' menu select
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

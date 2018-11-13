@@ -10,10 +10,8 @@ export DISABLE_AUTO_TITLE=true
 setopt auto_cd
 cdpath=($HOME $HOME/Projects)
 
-export GOPATH=$HOME/go_projects
-export PATH=$PATH:$GOPATH/bin
-
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:./node_modules/.bin
 
 # show completion menu on successive tab press
 setopt auto_menu

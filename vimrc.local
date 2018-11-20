@@ -4,6 +4,9 @@ set hidden
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" automatically sync syntax highligting for vue files
+autocmd FileType vue syntax sync fromstart
+
 " realitive line numbers
 set relativenumber
 
@@ -21,6 +24,9 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   tnoremap <A-[> <Esc>
 endif
+
+" text width at 100
+set textwidth=100
 
 " Complete terms from all buffers
 set complete=.,w,b,u,t,i
@@ -66,20 +72,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" vim-go settings
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-let g:go_fmt_command = "goimports"
-
 " vim-test settings
 let test#strategy = "neoterm"
-
-au FileType go nmap <leader>r <Plug>(go-run)
 
 let g:ale_fixers = {
   \ 'javascript': ['eslint'],

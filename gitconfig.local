@@ -9,8 +9,6 @@
   name = Daniel Nolan
   email = danielanolan@gmail.com
 
-[hub]
-  host = git.raysbaseball.com
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f

@@ -33,6 +33,8 @@ brew 'sqlite'
 brew 'reattach-to-user-namespace'
 # Persistent key-value database, with built-in net interface
 brew 'redis'
+# Library for command-line editing
+brew 'readline'
 # Search tool like grep and The Silver Searcher
 brew 'ripgrep'
 # Count lines of code in many languages

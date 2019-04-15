@@ -28,9 +28,6 @@ endif
 " text width at 100
 set textwidth=100
 
-" Complete terms from all buffers
-set complete=.,w,b,u,t,i
-
 " Persistent undos
 set undodir=~/.vim/backup
 set undofile
@@ -38,9 +35,14 @@ set undofile
 " Update time
 set updatetime=1500
 
+if (has("termguicolors"))
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " Color scheme
-set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Highlight find and replace
 if has("nvim")
@@ -54,7 +56,7 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Airline settings
 " set theme
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 
@@ -74,6 +76,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " vim-test settings
 let test#strategy = "neoterm"
+let g:test#javascript#mocha#file_pattern = ".*\.test\.js"
+let test#javascript#mocha#options = "--webpack-config config/webpack/mocha.test.js --require test/javascript/setup.js"
+
+let g:ale_linters = { 
+\'javascript': ['eslint'],
+\}
 
 let g:ale_fixers = {
   \ 'javascript': ['eslint'],

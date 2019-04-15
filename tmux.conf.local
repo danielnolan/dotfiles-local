@@ -49,39 +49,9 @@ set -g automatic-rename-format "#{pane_current_command}"
 # choose tree command for switching between sessions
 bind-key C-j choose-tree
 
-# Colors
-set -g status-fg colour7 # status fg
-set -g status-bg colour0 # status bg
-set -g status-attr default
-
-setw -g window-status-fg colour10 # default window title fg
-setw -g window-status-bg default # default window title bg
-setw -g window-status-attr default # default window title attribute
-
-setw -g window-status-current-fg colour2 # current window title fg
-setw -g window-status-current-bg default # current window title bg
-
-set -g pane-border-fg colour10
-set -g pane-border-bg default
-set -g pane-active-border-fg colour2
-set -g pane-active-border-bg default
-
-set -g message-bg colour1
-set -g message-fg colour7
-
-set -g display-panes-active-colour colour33
-set -g display-panes-colour colour166
-
-setw -g clock-mode-colour colour64
-
-set -g status-left-length 40
-set -g status-left "#[fg=colour10]Session: #S"
-set -g status-right "#[fg=colour10][%m/%d/%Y %l:%M%p]"
-set -g status-justify centre # center window list
-
-
 # List of plugins
 set -g @tpm_plugins '          \
+  egel/tmux-gruvbox            \
   tmux-plugins/tpm             \
   tmux-plugins/tmux-resurrect  \
 '

@@ -52,7 +52,7 @@ endif
 " Plugin settings - start
 
 " open CtrlP in buffer mode
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " Airline settings
 " set theme

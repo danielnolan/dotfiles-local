@@ -19,10 +19,14 @@ brew 'readline'
 brew 'sqlite'
 # Interpreted, interactive, object-oriented programming language
 brew 'python'
+# Core application library for C
+brew 'glib'
 # GNU Pretty Good Privacy (PGP) package
 brew 'gnupg'
 # Add GitHub support to git on the command-line
 brew 'hub'
+# Database of common MIME types
+brew 'shared-mime-info'
 # Tools and libraries to manipulate images in many formats
 brew 'imagemagick'
 # Open source relational database management system
@@ -47,6 +51,8 @@ brew 'ripgrep'
 brew 'ruby'
 # Count lines of code in many languages
 brew 'sloccount'
+# Tool to create intelligent and beautiful documentation
+brew 'sphinx-doc'
 # Vi 'workalike' with many additional features
 brew 'vim'
 # JavaScript package manager

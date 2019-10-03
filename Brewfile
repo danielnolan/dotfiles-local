@@ -11,6 +11,8 @@ brew 'coreutils'
 brew 'ctags'
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew 'freetds'
+# Command-line fuzzy finder written in Go
+brew 'fzf'
 # Distributed revision control system
 brew 'git'
 # Library for command-line editing

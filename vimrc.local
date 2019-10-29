@@ -64,18 +64,14 @@ let g:airline_powerline_fonts = 1
 let g:gitgutter_escape_grep = 1
 highlight clear SignColumn
 
-" Neoterm settings
-let g:neoterm_autoinsert = 1
-let g:neoterm_autoscroll = 1
-let g:neoterm_default_mod = ":vert"
-
 " Ultisnips settings
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " vim-test settings
-let test#strategy = "neoterm"
+let test#strategy = "neovim"
+let test#neovim#term_position = "vsplit"
 let g:test#javascript#mocha#file_pattern = ".*\.test\.js"
 let test#javascript#mocha#options = "--webpack-config config/webpack/mocha.test.js --require test/javascript/setup.js"
 

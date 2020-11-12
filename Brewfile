@@ -26,7 +26,7 @@ brew 'glib'
 # GNU Pretty Good Privacy (PGP) package
 brew 'gnupg'
 # Add GitHub support to git on the command-line
-brew 'hub'
+brew 'gh'
 # Database of common MIME types
 brew 'shared-mime-info'
 # Tools and libraries to manipulate images in many formats
